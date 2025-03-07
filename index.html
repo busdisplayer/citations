@@ -9,15 +9,36 @@
 
   <style>
     .bleu {
-      background-color: blue;
-      text-align: center;
-      font-color: white;
+      background-color: blue; /* fond bleu */
+      text-align: center; /* alignement central du texte */
+      color: white; /* couleur du texte en blanc */
+      font-family: "Times New Roman", sans-serif; /* Police d'écriture Times New Roman, alt sans-serif */
+    }
+    .image {
+      box-sizing: inherit; /* hérite de la hauteur largeur de ses éléments parents (en l'occurence : le div) */
+      vertical-align: middle; /* alignement vertical au centre (pas indispensable)*/
+      max-width: 25%; /* largeur maximale de l'image 50% de l'espace disponible */
+      height: auto; /* hauteur automatique en fonction des paramètres de largeur */
+    }
+     .grey {
+      background-color: grey; /* fond gris */
+      text-align: center; /* alignement central du texte */
+      color: black; /* couleur du texte en noir */
+      font-family: "Times New Roman", sans-serif; /* Police d'écriture Times New Roman, alt sans-serif */
     }
   </style>
 </head>
 <body>
   <div class="bleu">
     <h1>Citations - Baptiste M.</h1>
+    <img class="image" src="https://cdn.pixabay.com/photo/2013/07/12/12/23/nib-145703_1280.png" alt="Plume">
+  </div>
+  <div class="grey">
+    <a href="https://fr.wikipedia.org/wiki/Simone_de_Beauvoir">
+    <h2>Simone de Beauvoir</h2>
+      <img class="image" style="float: left;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Simone_de_Beauvoir2.png/390px-Simone_de_Beauvoir2.png" alt="Simone de Beauvoir">
+    </a>
+    <i>« On ne naît pas femme, on le devient. »</i>
   </div>
 </body>
 </html>
