@@ -63,6 +63,16 @@
   <script>
     const citations = [{ // Table contenant les citations //
       nom: "Antoine de Saint-Exupéry",
+      image: "https://tse1.mm.bing.net/th?id=OIP.ETcMm8nDXmYHUfbh5ECzygHaE8&pid=Api",
+      citation: "Fais de ta vie un rêve, et d'un rêve, une réalité.",
+    },
+                       { // Table contenant les citations //
+      nom: "Napoléon Ier",
+      image: "https://tse1.mm.bing.net/th?id=OIP.ETcMm8nDXmYHUfbh5ECzygHaE8&pid=Api",
+      citation: "Quand on veut, on peut. Quand on peut, on doit !",
+    },
+                       { // Table contenant les citations //
+      nom: "Antoine de Saint-Exupéry",
       image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Simone_de_Beauvoir2.png/390px-Simone_de_Beauvoir2.png",
       citation: "Fais de ta vie un rêve, et d'un rêve, une réalité.",
       ouvrage: "Le deuxième sexe",
@@ -76,7 +86,7 @@
       div.classList.add("grey"); // On ajoute l'élément "grey" au style du div //
       // LIEN //
       const lien = document.createElement("a");
-      lien.href = `https://fr.wikipedia.org/wiki/${personne.nom.toLowerCase().replace(/\s+/g,'_')}`;
+      lien.href = `https://fr.wikipedia.org/wiki/${personne.nom.replace(/\s+/g,'_')}`;
       lien.target = "_blank";
       const h2 = document.createElement("h2");
       h2.textContent = personne.nom;
