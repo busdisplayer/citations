@@ -62,7 +62,7 @@
   <div id="citation-container"></div> <!-- Ce div contiendra les div de citation -->
   <script>
     const citations = [{ // Table contenant les citations //
-      nom: "Simone de Beauvoir",
+      nom: "Antoine de Saint-Exupéry",
       link: "https://fr.wikipedia.org/wiki/Simone_de_Beauvoir",
       image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Simone_de_Beauvoir2.png/390px-Simone_de_Beauvoir2.png",
       citation: "On ne naît pas femme, on le devient.",
@@ -77,7 +77,7 @@
       div.classList.add("grey"); // On ajoute l'élément "grey" au style du div //
       // LIEN //
       const lien = document.createElement("a");
-      lien.href = personne.link;
+      lien.href = `https://fr.wikipedia.org/wiki/${personne.nom.toLowerCase().replace(/\s+/g,'_')}`;
       lien.target = "_blank";
       const h2 = document.createElement("h2");
       h2.textContent = personne.nom;
