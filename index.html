@@ -8,23 +8,29 @@
   <meta name="author" content="Baptiste M."> <!-- Nom de l'auteur de la page-->
 
   <style>
-    .bleu {
+    body { /* NB : Body est une balise HTML et non pas une classe CSS (on ne met donc pas de point) */
+     background: linear-gradient(to right, pink, darkblue); /* Application d'un dégradé linéraire (vers la droite, du rose, au bleu sombre) */
+    }
+    .bleu { /* On a ici à faire à une classe CSS, on utilise donc bien un point */
       background-color: blue; /* fond bleu */
       text-align: center; /* alignement central du texte */
       color: white; /* couleur du texte en blanc */
       font-family: "Times New Roman", sans-serif; /* Police d'écriture Times New Roman, alt sans-serif */
+      border-radius: 5px; /* Arrondi des bords du conteneur */
     }
     .image {
       box-sizing: inherit; /* hérite de la hauteur largeur de ses éléments parents (en l'occurence : le div) */
       vertical-align: middle; /* alignement vertical au centre (pas indispensable)*/
       max-width: 25%; /* largeur maximale de l'image 50% de l'espace disponible */
       height: auto; /* hauteur automatique en fonction des paramètres de largeur */
+      border-radius: 5px; /* Arrondi des bords du conteneur */
     }
      .grey {
       background-color: grey; /* fond gris */
       text-align: center; /* alignement central du texte */
       color: black; /* couleur du texte en noir */
       font-family: "Times New Roman", sans-serif; /* Police d'écriture Times New Roman, alt sans-serif */
+      border-radius: 5px; /* Arrondi des bords du conteneur */
     }
   </style>
 </head>
