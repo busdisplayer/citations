@@ -147,7 +147,9 @@
       const citation = document.createElement("h3");
       citation.innerHTML=`<i>« ${personne.citation} »</i>`;
       citation.onclick = function () {
-        window.speechSynthesis.speak(personne.citation);
+        const utterance = new SpeechSynthesisUtterance(personne.citation);
+        utterance.lang="fr-FR";
+        window.speechSynthesis.speak(utterance);
       }
       // OUVRAGE + DATE //
       const ouvrage = document.createElement("h3");
