@@ -12,7 +12,7 @@
      background: linear-gradient(to right, pink, darkblue); /* Application d'un dégradé linéraire (vers la droite, du rose, au bleu sombre) */
     }
     .bleu { /* On a ici à faire à une classe CSS, on utilise donc bien un point */
-      background-color: blue; /* fond bleu */
+      background-color: rgba(0,0,255,0.2); /* fond bleu (on pouvait aussi écrire "blue" */
       text-align: center; /* alignement central du texte */
       color: white; /* couleur du texte en blanc */
       font-family: "Times New Roman", sans-serif; /* Police d'écriture Times New Roman, alt sans-serif */
@@ -21,17 +21,36 @@
     .image {
       box-sizing: inherit; /* hérite de la hauteur largeur de ses éléments parents (en l'occurence : le div) */
       vertical-align: middle; /* alignement vertical au centre (pas indispensable)*/
-      max-width: 25%; /* largeur maximale de l'image 50% de l'espace disponible */
+      max-width: 15%; /* largeur maximale de l'image 50% de l'espace disponible */
       height: auto; /* hauteur automatique en fonction des paramètres de largeur */
       border-radius: 5px; /* Arrondi des bords du conteneur */
+      transition: transform 0.3s ease-in-out; /* Les transition de transformation auront lieu en 0.3s avec une entrée/sortie douce */
+    }
+    .image:hover {
+      transform: scale(1.05); /* Lorsqu'on clique la taille de l'image augmente de 10 % */
     }
      .grey {
-      background-color: grey; /* fond gris */
+      background-color: rgba(255,255,255,0.5); /* fond rgba (rouge, vert, bleu, opacité (de 0 à 1 [complètement visible])) */
       text-align: center; /* alignement central du texte */
       color: black; /* couleur du texte en noir */
       font-family: "Times New Roman", sans-serif; /* Police d'écriture Times New Roman, alt sans-serif */
       border-radius: 5px; /* Arrondi des bords du conteneur */
-      opacity: 0.5;
+    }
+    h1, h2, h3 {
+      color: black;
+      transition: color 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out;
+    }
+    h2 {
+      text-decoration: underline; /* Souligner le nom de la personne */
+    }
+    h2:hover, h3:hover {
+      color: blue;
+      transform: scale(1.05);
+    }
+    h1:hover {
+      color: white;
+      transform: scale(1.05);
     }
   </style>
 </head>
