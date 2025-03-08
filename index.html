@@ -63,9 +63,8 @@
   <script>
     const citations = [{ // Table contenant les citations //
       nom: "Antoine de Saint-Exupéry",
-      link: "https://fr.wikipedia.org/wiki/Simone_de_Beauvoir",
       image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Simone_de_Beauvoir2.png/390px-Simone_de_Beauvoir2.png",
-      citation: "On ne naît pas femme, on le devient.",
+      citation: "Fais de ta vie un rêve, et d'un rêve, une réalité.",
       ouvrage: "Le deuxième sexe",
       year: "1936",
     },
@@ -89,16 +88,21 @@
       img.classList.add("image");
       // CITATION //  
       const citation = document.createElement("h3");
-      citation.innerHTML=`<i>${personne.citation}</i>`;
+      citation.innerHTML=`<i>« ${personne.citation} »</i>`;
       // OUVRAGE + DATE //
       const ouvrage = document.createElement("h3");
-      ouvrage.innerHTML=`<i>${personne.ouvrage}</i>,<strong>${personne.year}</strong>`;
+      if (personne.ouvrage) { // Vérfier qu'on tire la phrase d'un livre
+      ouvrage.innerHTML=`<i>${personne.ouvrage}</i>, <strong>${personne.year}</strong>`;
+      }
       // APPENDING //
       div.appendChild(lien);
       div.appendChild(img);
       div.appendChild(citation);
+      
+      if (personne.ouvrage) { // Vérfier qu'on tire la phrase d'un livre (deuxième fois)
       div.appendChild(ouvrage);
-
+      };
+// Affectation au conteneur
       container.appendChild(div);
     });
   </script>
