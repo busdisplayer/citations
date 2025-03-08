@@ -59,13 +59,48 @@
     <h1>Citations - Baptiste M.</h1>
     <img class="image" style="margin-bottom: 2vh" src="https://cdn.pixabay.com/photo/2013/07/12/12/23/nib-145703_1280.png" alt="Plume">
   </div>
-  <div class="grey">
-    <a href="https://fr.wikipedia.org/wiki/Simone_de_Beauvoir" target="_blank"> <!-- Lien vers la page wikipédia-->
-    <h2>Simone de Beauvoir</h2> <!-- Nom de la personne -->
-    </a>
-    <img class="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Simone_de_Beauvoir2.png/390px-Simone_de_Beauvoir2.png" alt="Simone de Beauvoir"> <!-- Image de la personne -->
-    <h3><i>« On ne naît pas femme, on le devient. »</i></h3> <!-- Citation (en italique) -->
-    <h3><i>Le deuxième sexe</i>, <strong>1936</strong></h3> <!-- Ouvrage d'extraction (en italique), année de parution (en gras) -->
-  </div>
+  <div id="citation-container"></div> <!-- Ce div contiendra les div de citation -->
+  <script>
+    const citations = [{ // Table contenant les citations //
+      nom: "Simone de Beauvoir",
+      link: "https://fr.wikipedia.org/wiki/Simone_de_Beauvoir",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Simone_de_Beauvoir2.png/390px-Simone_de_Beauvoir2.png",
+      citation: "On ne naît pas femme, on le devient.",
+      ouvrage: "Le deuxième sexe",
+      year: "1936",
+    },
+                      ];
+    const container = document.getElementById("citation-container"); // Appel du conteneur dans la structure HTML //
+    citations.forEach(personne => { // syntaxe est array.forEach(item => {fonction}); //
+      // DIV //
+      const div = document.createElement("div"); // Créer un div dans le document //
+      div.classList.add("grey"); // On ajoute l'élément "grey" au style du div //
+      // LIEN //
+      const lien = document.createElement("a");
+      lien.href = personne.link;
+      lien.target = "_blank";
+      const h2 = document.createElement("h2");
+      h2.textContent = personne.nom;
+      lien.appendChild(h2);
+      // IMG //
+      const img = document.createElement("img");
+      img.src = personne.image;
+      img.alt = personne.nom;
+      img.classList.add("image");
+      // CITATION //  
+      const citation = document.createElement("h3");
+      citation.innerHTML=`<i>${personne.citation}</i>`;
+      // OUVRAGE + DATE //
+      const ouvrage = document.createElement("h3");
+      ouvrage.innerHTML=`<i>${personne.ouvrage}</i>,<strong>${personne.year}</strong>`;
+      // APPENDING //
+      div.appendChild(lien);
+      div.appendChild(img);
+      div.appendChild(citation);
+      div.appendChild(ouvrage);
+
+      container.appendChild(div);
+    });
+  </script>
 </body>
 </html>
